@@ -1,0 +1,12 @@
+<!-- WE USE THIS TEMPLATE FOR UPDATE PAGE AND CREATE PAGE -->
+{% extends 'main.html' %}
+{% block content %}
+<h1>Project Form</h1>
+<form action="" method="POST">
+    {% csrf_token %}
+    {{form.as_p}}
+    <input type="submit">
+</form>
+{% endblock %}
+
+<!-- DOCUMENTATION: https://docs.djangoproject.com/en/3.2/topics/forms/modelforms/ -->
