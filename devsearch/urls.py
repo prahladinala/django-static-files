@@ -21,6 +21,8 @@ urlpatterns = [
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+
 # GO TO URL http://localhost:8000/projects/
 # As there is no home route/path so http://localhost:8000/ > return 404
 
