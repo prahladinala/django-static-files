@@ -1,6 +1,8 @@
 from django.contrib import admin
 from django.urls import path, include
 
+from django.conf import settings # GET SETTINGS HERE
+from django.conf.urls.static import static # TO CREATE URLs FOR STATIC FILES
 # from django.http import HttpResponse
 # urlpatters > list
 # list item syntax > path('PATH/', FUNCTION TO RUN)
@@ -18,6 +20,7 @@ urlpatterns = [
     
 ]
 
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 # GO TO URL http://localhost:8000/projects/
 # As there is no home route/path so http://localhost:8000/ > return 404
 
