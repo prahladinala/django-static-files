@@ -21,7 +21,8 @@ def createProject(request):
     form = ProjectForm()
 
     if request.method == 'POST':
-        form = ProjectForm(request.POST)
+        form = ProjectForm(request.POST, request.FILES)
+        #  request.FILES > TO PROCESS THE FILES THAT UPLOADED > TO BACKEND TO GET FILES
         if form.is_valid():
             # form.is_valid() > Django MODELFORMS checks for any suspisios thinks or not
             form.save()  # .save() creates that object and will add new object to database
@@ -37,7 +38,7 @@ def updateProject(request, pk):
     form = ProjectForm(instance=project)
 
     if request.method == 'POST':
-        form = ProjectForm(request.POST, instance=project)
+        form = ProjectForm(request.POST, request.FILES, instance=project)
         if form.is_valid():
             form.save()
             return redirect('projects')
